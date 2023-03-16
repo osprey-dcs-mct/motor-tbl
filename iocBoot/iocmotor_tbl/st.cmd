@@ -7,6 +7,9 @@
 
 cd "${TOP}"
 
+epicsEnvSet("PREFIX", "MCT:")
+epicsEnvSet("DEVICE", "TBL1:")
+
 ## Register all support components
 dbLoadDatabase "dbd/motor_tbl.dbd"
 motor_tbl_registerRecordDeviceDriver pdbbase
@@ -27,6 +30,7 @@ motorSimConfigAxis("motorSim2", 7, 20000, -20000, 0, 0)
 
 ## Load record instances
 dbLoadTemplate("db/motor.substitutions")
+dbLoadRecords("db/kill.db", "P=$(PREFIX),R=$(DEVICE)")
 
 cd "${TOP}/iocBoot/${IOC}"
 iocInit

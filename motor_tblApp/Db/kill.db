@@ -1,0 +1,11 @@
+record(bi, "$(P)$(R)Motor1UnkillCmd") {
+	field(DESC, "Motor 1 Unkill")
+	field(ZNAM, "Kill")
+	field(ONAM, "Unkill")
+}
+
+record(bi, "$(P)$(R)Motor2UnkillCmd") {
+	field(DESC, "Motor 2 Unkill")
+	field(ZNAM, "Kill")
+	field(ONAM, "Unkill")
+}
